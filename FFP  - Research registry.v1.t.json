@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "1.1.0",
+      "sem_ver" : "1.1.1",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "c6a2889edcbf59614af46f3ee843613e",
+      "MD5-CAM-1.0.1" : "855a6391bc026eeca3ca1f1d94a5ab8e",
       "PARENT:MD5-CAM-1.0.1" : "5D7128B10BA5AF84CC9C973D48833BE9"
     },
     "details" : {
@@ -485,7 +485,8 @@
                         "value" : "ProblemsUvIps"
                       },
                       "constraint" : [ "ac0.1" ],
-                      "selectedTerminologies" : [ "ProblemsUvIps" ]
+                      "selectedTerminologies" : [ "ProblemsUvIps" ],
+                      "limitToList" : false
                     } ]
                   } ],
                   "attributeTuples" : [ ]

@@ -1,0 +1,70 @@
+archetype (adl_version=1.4; uid=3f6c1c52-8a0e-4d7e-9b1a-2f1d6a4b9e01)
+	openEHR-EHR-CLUSTER.person_birth_data.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2026-10-21">
+		["name"] = <"Draft for FLS Registry template">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record a person's date of birth inside an EHR composition, where a registry or data-exchange dataset needs it carried with the clinical record.">
+			keywords = <"date of birth","DOB","birth date">
+			use = <"Use inside CLUSTER.person or ADMIN_ENTRY.demographics when the date of birth must be carried in the composition, for example in registry submissions.
+
+In a full openEHR system the date of birth would normally come from the demographic service (openEHR-DEMOGRAPHIC-CLUSTER.person_birth_data_iso) or EHR_STATUS, and this cluster should only be a copy of that value.">
+			misuse = <"Not to be used as the master record of the person's date of birth where a demographic service exists.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"Local">
+		["original_namespace"] = <"local">
+		["revision"] = <"0.0.1-alpha">
+		["MD5-CAM-1.0.1"] = <"bda8bcc573f4608fb9a906a5ee27547a">
+		["build_uid"] = <"6007f2c5-6346-30ec-ba62-a2ca5516bbe5">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Person birth data
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Date of birth
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Comment
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Person birth data">
+					description = <"Details of a person's birth, carried within an EHR composition.">
+				>
+				["at0001"] = <
+					text = <"Date of birth">
+					description = <"The date on which the person was born. Partial dates are allowed.">
+				>
+				["at0002"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the birth data not captured in other fields.">
+				>
+			>
+		>
+	>
